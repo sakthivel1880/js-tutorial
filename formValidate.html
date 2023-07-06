@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<style>
+			span {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<div>
+				<label>UserName</label>
+				<input type="text" id="username" class="username" />
+				<!--onchange="userValidate()" -->
+				<span id="error-user"></span>
+			</div>
+			<div>
+				<label>email</label>
+				<input type="text" id="emial" class="username" />
+				<!--onchange="emailValidate()" -->
+				<span id="error-email"></span>
+			</div>
+			<div>
+				<label>phoneNumber</label>
+				<input type="text" id="phoneNumber" class="username" />
+				<!--onchange="numberValidate()" -->
+				<span id="error-phone"></span>
+			</div>
+			<div>
+				<label>age</label>
+				<input type="text" id="age" class="username" />
+				<!--onchange="ageValidate()" -->
+				<span id="error-age"></span>
+			</div>
+			<div>
+				<label>Password</label>
+				<input type="password" id="password" class="password" />
+				<!--onchange="PassValidate()" -->
+				<span id="error-pass"></span>
+			</div>
+			<div>
+				<input type="button" name="submit" value="submit" onclick="formSubmit()" />
+			</div>
+		</form>
+	</body>
+	<script>
+		// console.log('21212')
+		// document.getElementById('username').value = 'qwerty'
+		function formSubmit() {
+			function userValidate() {
+				var username = document.getElementById('username').value
+				var letters = /^[A-Za-z]+$/
+				if (username !== '') {
+					if (letters.test(username)) {
+						// return true
+						console.log('userName success!')
+						document.getElementById('error-user').innerHTML = ''
+					} else {
+						document.getElementById('error-user').innerHTML = 'username should contain only letters.'
+						// return false
+					}
+				} else {
+					document.getElementById('error-user').innerHTML = 'username should not be empty.'
+					// return false
+				}
+			}
+
+			function emailValidate() {
+				var email = document.getElementById('emial').value
+				var emialReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+				if (email !== '') {
+					if (emialReg.test(email)) {
+						console.log(' Email success!')
+						// return true
+						document.getElementById('error-email').innerHTML = ''
+					} else {
+						// return false
+						document.getElementById('error-email').innerHTML = 'emial not valid.'
+					}
+				} else {
+					// return false
+					document.getElementById('error-email').innerHTML = 'email should be nbot empty.'
+				}
+			}
+
+			function numberValidate() {
+				var phoneNumber = document.getElementById('phoneNumber').value
+				var phoneReg = /^\d*$/
+				if (phoneNumber !== '') {
+					if (phoneReg.test(phoneNumber)) {
+						if (phoneNumber.toString().length === 10) {
+							// return true
+							console.log(' Phone Number success!')
+							document.getElementById('error-phone').innerHTML = ''
+						} else {
+							// return false
+							document.getElementById('error-phone').innerHTML = 'Phone Number should be equal to 10 char!'
+						}
+					} else {
+						// return false
+						document.getElementById('error-phone').innerHTML = 'Phone Number not valid.'
+					}
+				} else {
+					// return false
+					document.getElementById('error-phone').innerHTML = 'Phone Number should not be empty.'
+				}
+			}
+
+			function ageValidate() {
+				var age = document.getElementById('age').value
+				var ageReg = /^\d*$/
+				if (age !== '') {
+					if (ageReg.test(age)) {
+						if (age >= 18 && age <= 25) {
+							// return true
+							document.getElementById('error-age').innerHTML = ''
+						} else {
+							// return false
+							document.getElementById('error-age').innerHTML = 'age sould be between 18 to 25!'
+						}
+					} else {
+						// return false
+						document.getElementById('error-age').innerHTML = 'age not valid.'
+					}
+				} else {
+					// return false
+					document.getElementById('error-age').innerHTML = 'age should not be empty.'
+				}
+			}
+
+			function PassValidate() {
+				var password = document.getElementById('password').value
+				if (password !== '') {
+					if (password.toString().length > 6) {
+						// return true
+						document.getElementById('error-pass').innerHTML = ''
+					} else {
+						// return false
+						document.getElementById('error-pass').innerHTML = 'password is Weak!'
+					}
+				} else {
+					// return false
+					document.getElementById('error-pass').innerHTML = 'password should not be empty.'
+				}
+			}
+
+			userValidate()
+			emailValidate()
+			PassValidate()
+			ageValidate()
+			numberValidate()
+		}
+	</script>
+</html>

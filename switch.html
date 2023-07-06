@@ -1,0 +1,48 @@
+<html>
+  <body>
+      <input type="text" id="input1" />
+      <input type="text" id="input2" />
+      <!-- <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select> -->
+      <input type="button" onclick="formSubmit()" value="Submit" />
+    </div>
+    <div>
+      <span id="first">case 1</span>
+      <span id="sec">case 2</span>
+      <span id="third">default</span>
+    </div>
+  </body>
+  <script>
+    document.write(4+5)
+    document.getElementById('first').innerHTML = 'changed case 1'
+    document.getElementById('first').style.display = 'none'
+      document.getElementById('sec').style.display = 'none'
+      document.getElementById('third').style.display = 'none'
+    function formSubmit(){
+      var val1 = document.getElementById('input1').value;
+      var val2 = document.getElementById('input2').value;
+
+      switch(true){
+        // case parseFloat(val1)+parseFloat(val2) < 10 || parseFloat(val1)+parseFloat(val2) > 20:
+        case !(parseFloat(val1)+parseFloat(val2)):
+            document.getElementById('first').style.display = 'block'
+            document.getElementById('sec').style.display = 'none'
+            document.getElementById('third').style.display = 'none'
+            break;
+        case parseFloat(val1)+parseFloat(val2) === 10:
+            document.getElementById('sec').style.display = 'block'
+            document.getElementById('first').style.display = 'none'
+            document.getElementById('third').style.display = 'none'
+            break;
+        default: 
+            document.getElementById('third').style.display = 'block'
+            document.getElementById('first').style.display = 'none'
+            document.getElementById('sec').style.display = 'none'
+            break;
+      }
+    }
+  </script>
+</html>

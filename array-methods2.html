@@ -1,0 +1,25 @@
+<html>
+	<body></body>
+	<script>
+		var arr1 = ['A', 'B', 'C', 'D', 'E', 'F']
+
+		//Map
+		arr1.map((value, index) => document.write('   ' + value + '   ' + index))
+
+		document.write('<br /><br />')
+		// ForEach
+		arr1.forEach((value, index) => document.write('   ' + value + '   ' + index))
+
+		//Filter
+		const filterArr = arr1.filter(e => e === 'A')
+		document.write(' <br /><br />' + filterArr)
+
+		//Find
+		const findArr = arr1.find(e => e === 'A')
+		document.write(' <br /><br />' + findArr)
+
+		// Keys
+
+		arr1.keys().map(e => document.write(e))
+	</script>
+</html>

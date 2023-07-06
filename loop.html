@@ -1,0 +1,36 @@
+<html>
+	<body></body>
+	<script>
+		var arr1 = ['A', 'B', 'C', 'D', 'E', 'F']
+
+		var arr2 = [
+			['A', 'B', 'C'],
+			[1, 2, 3]
+		]
+
+		var arr3 = [
+			{ A: 1, B: 3 },
+			{ A: 3, B: 3 }
+		]
+
+		document.write('1-d Array output <br/>')
+		// 1-d array
+		for (var i = 0; i < arr1.length; i++) {
+			document.write(arr1[i] + ' ' + i + '<br/>')
+		}
+
+		document.write('<br/><br/><br/> 2-d Array output <br/>')
+		// 2-d array
+		for (var i = 0; i < arr2.length; i++) {
+			for (var j = 0; j < arr2[i].length; j++) {
+				document.write(arr2[i][j] + ' ' + i + ' ' + j + '<br/>')
+			}
+		}
+
+		document.write('<br/><br/><br/> Array of Objects output <br/>')
+		// array of Obj
+		for (var i = 0; i < arr3.length; i++) {
+			document.write(arr3[i].A + ' ' + arr3[i].B + ' ' + i + '<br/>')
+		}
+	</script>
+</html>
